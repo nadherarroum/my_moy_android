@@ -2,6 +2,7 @@ package com.nadherarroum.calc_moy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText note1, note2, note3;
     private TextView result_view;
     private Button button;
+    private Double resultMoy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,26 @@ public class MainActivity extends AppCompatActivity {
 
         if (n1.isEmpty() || n2.isEmpty() || n3.isEmpty()){
             showMessageDialog();
+        }else{
+            resultMoy = doCalc(n1, n2, n3);
+            if (resultMoy>=10){
+                goToReussiActivity(String.valueOf(resultMoy));
+            }
         }
+    }
+
+    private void goToReussiActivity(String moy) {
+        Intent intent = new Intent(MainActivity.this, Activity_reussi.class);
+        intent.putExtra("keymoy",moy);
+        startActivity(intent);
+    }
+
+    private double doCalc(String n1, String n2, String n3) {
+        double not1 = Double.parseDouble(n1);
+        double not2 = Double.parseDouble(n2);
+        double not3 = Double.parseDouble(n3);
+
+        return (not1+not2+not3)/3;
     }
 
     private void showMessageDialog() {
