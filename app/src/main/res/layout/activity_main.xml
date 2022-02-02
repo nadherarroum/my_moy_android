@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/teal_700"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My Moy"
+            android:textAlignment="center"
+            android:textColor="#DCE775"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <EditText
+            android:id="@+id/note1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="1er note"
+            android:inputType="number"
+            android:textColor="#FFFEFE"
+            android:textColorHint="#59FFFFFF"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/note2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="2ème note"
+            android:inputType="number"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#59FFFFFF"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/note3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="3ème note"
+            android:inputType="number"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#59FFFFFF"
+            android:textSize="20sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+        <TextView
+            android:id="@+id/result_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Result"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/calc_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="#009688"
+            android:text="Calculer"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:iconTint="#4CAF50" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
