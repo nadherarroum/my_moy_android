@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,14 +45,21 @@ public class MainActivity extends AppCompatActivity {
         String n2 = note2.getText().toString();
         String n3 = note3.getText().toString();
 
-        if (n1.isEmpty() || n2.isEmpty() || n3.isEmpty()){
+        if (n1.isEmpty() || n2.isEmpty() || n3.isEmpty()) {
             showMessageDialog();
         }else{
             resultMoy = doCalc(n1, n2, n3);
             if (resultMoy>=10){
-                goToReussiActivity(String.valueOf(resultMoy));
+                //goToReussiActivity(String.valueOf(resultMoy));
+                goToReussiActivity(String.format("%.2f",resultMoy));
+            }else{
+                showTost(String.format("%.2f",resultMoy));
             }
         }
+    }
+
+    private void showTost(String moy) {
+        Toast.makeText(this, "Tu n'as pas réussi avec un moyenne de"+moy+" !", Toast.LENGTH_SHORT).show();
     }
 
     private void goToReussiActivity(String moy) {
