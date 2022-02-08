@@ -1,8 +1,10 @@
 package com.nadherarroum.calc_moy;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.home_navbar_color));
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
         note1 = findViewById(R.id.note1);

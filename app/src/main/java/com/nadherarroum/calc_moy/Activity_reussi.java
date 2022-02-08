@@ -13,14 +13,16 @@ import android.widget.TextView;
 public class Activity_reussi extends AppCompatActivity {
 
     private TextView textView,statictext;
-    private Button button;
+    private Button button,goHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.reussi_color)));
         setContentView(R.layout.activity_reussi);
 
         button = findViewById(R.id.send_sms_btn);
+        goHome = findViewById(R.id.home_btn);
         statictext = findViewById(R.id.static_txt_view);
         textView = findViewById(R.id.result_moy_view);
 
@@ -31,6 +33,14 @@ public class Activity_reussi extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openSMSapp();
+            }
+        });
+
+        goHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Activity_reussi.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }
